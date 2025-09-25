@@ -1,7 +1,7 @@
 // $(".search-button").on("click", function () {
 //   $.ajax({
 //     url:
-//       "http://www.omdbapi.com/?apikey=cb103da6&s=" + $(".input-keyword").val(),
+//       "https://www.omdbapi.com/?apikey=cb103da6&s=" + $(".input-keyword").val(),
 //     success: (rslt) => {
 //       const movies = rslt.Search;
 //       let cards = "";
@@ -12,7 +12,7 @@
 //       $(".modal-detail-button").on("click", function () {
 //         $.ajax({
 //           url:
-//             "http://www.omdbapi.com/?apikey=cb103da6&i=" +
+//             "https://www.omdbapi.com/?apikey=cb103da6&i=" +
 //             $(this).data("imdbid"),
 //           success: (m) => {
 //             const movieDetail = showMovieDetail(m);
@@ -29,7 +29,7 @@
 // const searchButton = document.querySelector(".search-button");
 // const inputKey = document.querySelector(".input-keyword");
 // searchButton.addEventListener("click", function () {
-//   fetch(`http://www.omdbapi.com/?apikey=cb103da6&s=${inputKey.value}`).then(
+//   fetch(`https://www.omdbapi.com/?apikey=cb103da6&s=${inputKey.value}`).then(
 //     (response) =>
 //       response.json().then((r) => {
 //         const movies = r.Search;
@@ -43,7 +43,7 @@
 //         modalDetail.forEach((btn) => {
 //           btn.addEventListener("click", function () {
 //             fetch(
-//               `http://www.omdbapi.com/?apikey=cb103da6&i=${this.dataset.imdbid}`
+//               `https://www.omdbapi.com/?apikey=cb103da6&i=${this.dataset.imdbid}`
 //             )
 //               .then((r) => r.json())
 //               .then((r) => {
@@ -71,7 +71,7 @@ searchButton.addEventListener("click", async function () {
 });
 
 function getMovies(keyword) {
-  return fetch(`http://www.omdbapi.com/?apikey=cb103da6&s=${keyword}`)
+  return fetch(`https://www.omdbapi.com/?apikey=cb103da6&s=${keyword}`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(response.statusText);
@@ -106,7 +106,7 @@ document.addEventListener("click", async function (e) {
 });
 
 function getMovieDetail(imdbid) {
-  return fetch(`http://www.omdbapi.com/?apikey=cb103da6&i=${imdbid}`)
+  return fetch(`https://www.omdbapi.com/?apikey=cb103da6&i=${imdbid}`)
     .then((r) => {
       if (!r.ok) {
         throw new Error(r.statusText);
